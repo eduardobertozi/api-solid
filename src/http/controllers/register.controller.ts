@@ -28,7 +28,7 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
       return reply.code(409).send({ message: err.message })
     }
 
-    return reply.code(500).send() // TODO: Fix me
+    throw err
   }
 
   return reply.code(201).send()
