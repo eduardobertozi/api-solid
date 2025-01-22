@@ -4,7 +4,7 @@
   "description": "Gympass style app.",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "dev": "tsx watch --env-file=.env src/server.ts",
     "start": "node --env-file=.env build/server.js",
     "build": "tsup src --out-dir build",
     "test": "vitest run",
