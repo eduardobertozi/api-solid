@@ -18,4 +18,5 @@ jobs:
           node-version: 20.16.0
           cache: 'pnpm'
       - run: pnpm install
+      - run: pnpm prisma generate
       - run: pnpm test
