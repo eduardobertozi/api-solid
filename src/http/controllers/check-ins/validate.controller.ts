@@ -15,5 +15,5 @@ export async function validate(request: FastifyRequest, reply: FastifyReply) {
     checkInId,
   })
 
-  return reply.code(204) // Resposta vazia de algo que foi modificado
+  return reply.code(204).send() // Resposta vazia de algo que foi modificado
 }
