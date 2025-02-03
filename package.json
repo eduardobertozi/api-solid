@@ -9,7 +9,7 @@
     "build": "tsup src --out-dir build",
     "test": "vitest run --dir src/use-cases",
     "test:watch": "vitest --dir src/use-cases",
-    "test:e2e": "vitest  run --dir src/http",
+    "test:e2e": "vitest run --dir src/http",
     "pretest:e2e": "cd prisma/vitest-environment-prisma && pnpm link --global",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui"
