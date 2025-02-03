@@ -15,6 +15,7 @@ describe('Refresh Token (E2E)', () => {
       name: 'John doe',
       email: 'johndoe@example.com',
       password: '123456',
+      role: 'ADMIN',
     })
 
     const authResponse = await request(app.server).post('/sessions').send({
@@ -24,9 +25,13 @@ describe('Refresh Token (E2E)', () => {
 
     const cookies = authResponse.get('Set-Cookie')
 
+    if (!cookies) {
+      throw new Error('No cookies found in the response')
+    }
+
     const response = await request(app.server)
       .patch('/token/refresh')
-      .set('Cookie', cookies!)
+      .set('Cookie', cookies)
       .send()
 
     expect(response.statusCode).toEqual(200)
