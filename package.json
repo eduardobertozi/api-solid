@@ -7,9 +7,10 @@
     "dev": "tsx watch --env-file=.env src/server.ts",
     "start": "node --env-file=.env build/server.js",
     "build": "tsup src --out-dir build",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:coverage": "vitest --coverage",
+    "test": "vitest run --dir src/use-cases",
+    "test:watch": "vitest --dir src/use-cases",
+    "test:e2e": "vitest  run --dir src/http",
+    "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui"
   },
   "keywords": [],
